@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,8 +11,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'kalameh',
+        scaffoldBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.light(
+          primary: Colors.blue,
+          secondary: Colors.yellow,
+        ),
+      ),
+      darkTheme: ThemeData(
+        fontFamily: 'kalameh',
+        scaffoldBackgroundColor: Colors.black,
+        colorScheme: ColorScheme.light(
+          primary: Colors.blue,
+          onPrimary: Colors.white,
+          secondary: Colors.yellow,
+        ),
+      ),
+      themeMode: ThemeMode.light,
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
@@ -22,6 +41,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
+          child: Icon(Icons.add),
         ),
         body: SizedBox(
           width: double.infinity,
@@ -30,9 +50,10 @@ class MyApp extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {},
-                child: Text('test'),
+                child: Text('تست یک'),
               ),
-              Text('test text')
+              SizedBox(height: 20),
+              Text('این یک متن  می باشد')
             ],
           ),
         ),
