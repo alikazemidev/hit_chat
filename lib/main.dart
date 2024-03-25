@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeHelpper.lightTheme ,
+      theme: ThemeHelpper.lightTheme,
       darkTheme: ThemeHelpper.darkTheme,
       themeMode: ThemeMode.light,
       localizationsDelegates: [
@@ -35,9 +35,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
       floatingActionButton: FloatingActionButton(
-        onPressed:ThemeHelpper.changeTheme,
-        child:context.isDarkMode ? Icon(Icons.mode_night): Icon(Icons.add),
+        onPressed: ThemeHelpper.changeTheme,
+        child: context.isDarkMode ? Icon(Icons.mode_night) : Icon(Icons.add),
       ),
       body: SizedBox(
         width: double.infinity,
@@ -52,7 +53,6 @@ class HomePage extends StatelessWidget {
             Text('این یک متن  می باشد'),
             SizedBox(),
             Container(
-
               decoration: BoxDecoration(),
             ),
           ],
@@ -61,4 +61,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
